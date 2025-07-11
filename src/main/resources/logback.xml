@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- HikariCP specific logging -->
+    <logger name="com.zaxxer.hikari" level="DEBUG"/>
+    <logger name="com.zaxxer.hikari.HikariConfig" level="DEBUG"/>
+    <logger name="com.zaxxer.hikari.pool.HikariPool" level="OFF"/>
+    <logger name="com.zaxxer.hikari.pool.PoolBase" level="OFF"/>
+
+
+    <!-- Database connection logging -->
+    <logger name="org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator" level="DEBUG"/>
+    <logger name="org.springframework.jdbc.core" level="TRACE"/>
+    <logger name="org.springframework.boot.autoconfigure.jdbc" level="DEBUG"/>
+
+    <!-- Application specific logging -->
+    <logger name="dev.srivatsan.dvdrental" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
