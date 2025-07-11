@@ -15,8 +15,7 @@ public class Customer {
     private String lastName;
     private String email;
 
-    // ToDo: Create Address Mapping
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
