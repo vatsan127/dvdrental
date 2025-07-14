@@ -1,0 +1,33 @@
+## OneToOne
+http://localhost:8080/dvdrental/v1/customer/save
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "address": {
+    "state": "123 Main St",
+    "country": "Central"
+  }
+}
+
+
+http://localhost:8080/dvdrental/v1/customer/find/1
+http://localhost:8080/dvdrental/v1/address/find/1
+
+---
+## OneToMany
+http://localhost:8080/dvdrental/v1/actor/save
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "film": [
+    {
+      "filmName": "NFS"
+    },
+    {
+      "filmName": "F&F"
+    }
+  ]
+}
+
+http://localhost:8080/dvdrental/v1/actor/find/1
